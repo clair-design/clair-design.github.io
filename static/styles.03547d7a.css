@@ -2169,9 +2169,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: top;
-      -ms-flex-align: top;
-          align-items: top
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start
 }
 .c-form-item .c-form-item__label {
   display: block;
@@ -2189,8 +2189,10 @@
 }
 .c-form-item .c-form-item__control {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 0%;
-          flex: 1 0 0%;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  -ms-flex-preferred-size: content;
+      flex-basis: content;
   line-height: 32px;
 }
 .c-form-item .c-form-item__error {
@@ -2220,13 +2222,13 @@
 }
 .c-form-item.is-flex .c-form-item__control {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
-.c-form--inline .c-form-item {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex
+.c-form--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
 }
 .c-form--inline .c-form-item:not(:last-child) {
   margin-right: 1em;
@@ -3554,6 +3556,7 @@ textarea.c-input {
   margin-left: 1em;
 }
 .c-radio--button {
+  display: block;
   position: relative
 }
 .c-radio--button > input {
@@ -3603,6 +3606,10 @@ textarea.c-input {
   background: rgb(241, 242, 243);
   color: rgb(187, 192, 195);
   cursor: not-allowed;
+}
+.c-form-item__control .c-radio-group {
+  /* fix IE10 alignment bug */
+  vertical-align: top;
 }
 
 /**
@@ -6992,13 +6999,15 @@ textarea {
 .c-box__item {
   padding: 0;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex-preferred-size: content;
+      flex-basis: content
 }
 .c-box__item.is-narrow {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 .is-justify-start {
   -webkit-box-pack: start;
