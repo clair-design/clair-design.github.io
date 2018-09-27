@@ -5132,10 +5132,13 @@ textarea {
   opacity: 0;
 }
 .c-datepicker__panel {
-  border: 1px solid rgb(214, 217, 219);
   -webkit-box-shadow: 2px 2px 0.5em 0 rgb(241, 242, 243);
           box-shadow: 2px 2px 0.5em 0 rgb(241, 242, 243);
   overflow: hidden
+}
+.c-datepicker__panel.withBorder {
+  border: 1px solid rgb(214, 217, 219);
+  border-radius: 0.2em;
 }
 .c-datepicker__panel .c-calendar {
   border: 0;

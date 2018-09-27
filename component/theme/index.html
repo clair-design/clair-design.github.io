@@ -9,7 +9,7 @@
   <title data-vue-meta="true"></title>
   <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   
-  <link rel="stylesheet" href="/static/styles.5d20b4ee.css" />
+  <link rel="stylesheet" href="/static/styles.6d876937.css" />
   
    <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js') }</script>
 </head>
@@ -20,8 +20,7 @@
   <span class="hljs-attribute">--primary-color</span>: <span class="hljs-number">#2196f3</span>;
   <span class="hljs-attribute">--grid-gap</span>: <span class="hljs-number">1em</span>;
 }
-</code></pre> <p>Clair 使用的完整 CSS 变量列表，请 <a href="https://github.com/clair-design/clair/blob/master/src/css/default.css" target="_blank" rel="nofollow noopener noreferrer">查看 github 代码</a></p> <h3 id="2-zai-ni-de-xiang-mu-zhong-yin-ru-clair-de-yang-shi">2. 在你的项目中引入 Clair 的样式</h3> <p>在你的项目 CSS 入口文件（比如 <code>main.css</code>）中，引入 Clair 及其组件样式。</p> <pre><code class="hljs language-css">@<span class="hljs-keyword">import</span> url(<span class="hljs-string">'clair/src/css/main.css'</span>);
-@<span class="hljs-keyword">import</span> url(<span class="hljs-string">'clair/src/components/**/*.css'</span>);
+</code></pre> <p>Clair 使用的完整 CSS 变量列表，请 <a href="https://github.com/clair-design/clair/blob/master/src/css/default.css" target="_blank" rel="nofollow noopener noreferrer">查看 github 代码</a></p> <h3 id="2-zai-ni-de-xiang-mu-zhong-yin-ru-clair-de-yang-shi">2. 在你的项目中引入 Clair 的样式</h3> <p>在你的项目 CSS 入口文件（比如 <code>main.css</code>）中，引入 Clair 及其组件样式。</p> <pre><code class="hljs language-css">@<span class="hljs-keyword">import</span> url(<span class="hljs-string">'clair/src/styles/main.css'</span>);
 </code></pre> <h3 id="3-pei-zhi-postcss-cha-jian">3. 配置 PostCSS 插件</h3> <p>使用 npm 安装 PostCSS 及其插件：</p> <pre><code class="hljs language-shell">npm install postcss postcss-cssnext postcss-each postcss-for postcss-import
 </code></pre> <p>在 PostCSS 的配置文件 <code>postcss.config.js</code> 中添加如下配置：</p> <pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> { resolve, join } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
 <span class="hljs-keyword">const</span> glob = <span class="hljs-built_in">require</span>(<span class="hljs-string">'glob'</span>)
@@ -33,7 +32,7 @@
         <span class="hljs-keyword">const</span> cwd = process.cwd()
         <span class="hljs-comment">// 将 theme.css 指向你的项目中的 CSS 变量配置文件</span>
         <span class="hljs-keyword">if</span> (id === <span class="hljs-string">'./theme.css'</span>) <span class="hljs-keyword">return</span> resolve(cwd, <span class="hljs-string">'src/css/theme.css'</span>)
-        <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^clair/</span>.test(id)) <span class="hljs-keyword">return</span> glob.sync(join(cwd, <span class="hljs-string">'node_modules'</span>, id))
+        <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/\*\*/</span>.test(id)) <span class="hljs-keyword">return</span> glob.sync(join(cwd, <span class="hljs-string">'node_modules/clair/src/styles/'</span>, id))
         <span class="hljs-keyword">return</span> id
       }
     },
@@ -45,8 +44,8 @@
 </code></pre></article><footer>Code licensed under MIT License.<a href="https://github.com/clair-design/clair">Github项目</a>/<a href="https://github.com/clair-design/clair/issues">问题反馈</a></footer></div></div><button type="button" title="回到顶部" class="c-button c-button--primary c-button--round c-button--outline" style="display:none;position:fixed;right:50px;bottom:100px;z-index:999;"><span class="c-icon">​<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation-2" style="vertical-align:middle;"><polygon points="12 2 19 21 12 17 5 21 12 2"></polygon></svg></span><!----></button></div></div></div>
   <script src="https://lib.baomitu.com/babel-polyfill/6.26.0/polyfill.min.js"></script><script src="https://lib.baomitu.com/fetch/2.0.3/fetch.min.js"></script>
   
-  <script src="/static/vendor.4c63d9dc.js"></script>
-  <script src="/static/framework.5d73b512.js"></script>
-  <script src="/static/manifest.39a376b4.js"></script>
+  <script src="/static/vendor.31308abe.js"></script>
+  <script src="/static/framework.52242e52.js"></script>
+  <script src="/static/manifest.9bfa618e.js"></script>
 </body>
 </html>

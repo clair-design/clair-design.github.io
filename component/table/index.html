@@ -9,7 +9,7 @@
   <title data-vue-meta="true"></title>
   <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   
-  <link rel="stylesheet" href="/static/styles.5d20b4ee.css" />
+  <link rel="stylesheet" href="/static/styles.6d876937.css" />
   
    <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js') }</script>
 </head>
@@ -715,6 +715,7 @@
   <span class="hljs-attr">:columns</span>=<span class="hljs-string">&quot;columns&quot;</span>
   <span class="hljs-attr">:datasource</span>=<span class="hljs-string">&quot;datasource&quot;</span>
   <span class="hljs-attr">:expand</span>=<span class="hljs-string">&quot;hasExpand&quot;</span>
+  @<span class="hljs-attr">openExpand</span>=<span class="hljs-string">&quot;openExpand&quot;</span>
 &gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;expand&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;props&quot;</span>&gt;</span>
     32324--{{props.row.type}}
@@ -722,6 +723,12 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">c-table</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">methods</span>: {
+    openExpand (item, index) {
+      alert(index)
+      <span class="hljs-built_in">console</span>.log(item)
+    }
+  },
   data () {
     <span class="hljs-keyword">return</span> {
       <span class="hljs-attr">hasExpand</span>: <span class="hljs-literal">true</span>,
@@ -762,8 +769,8 @@
 </code></pre></div> <h2 id="api">API</h2> <blockquote><p>注意： 在 <code>columns</code>设置第一列的<code>type</code>为<code>selection</code>， 即可支持第一列展现可选框；横向或者纵向出现滚动条时需要设置单元格的宽度，否则无法保证表头和内容的对齐性</p></blockquote> <h3 id="columns">columns</h3> <table><thead><tr><th>属性</th> <th>类型</th> <th>默认值</th> <th>说明</th></tr></thead> <tbody><tr><td>key</td> <td>String</td> <td>-</td> <td>-</td></tr> <tr><td>title</td> <td>String</td> <td>-</td> <td>表头展现</td></tr> <tr><td>width</td> <td>Number, String</td> <td>-</td> <td>number 会自动转化为像素，string 会直接用来展现</td></tr> <tr><td>className</td> <td>String</td> <td>-</td> <td>列的类名</td></tr> <tr><td>fixed</td> <td>String</td> <td>-</td> <td>可以设置 left，right 进行定位</td></tr> <tr><td>sorter</td> <td>Boolean</td> <td>false</td> <td>是否支持排序</td></tr></tbody></table> <h3 id="shu-xing">属性</h3> <table><thead><tr><th>属性</th> <th>类型</th> <th>默认值</th> <th>说明</th></tr></thead> <tbody><tr><td>columns</td> <td>Object</td> <td>{}</td> <td>详情见上表</td></tr> <tr><td>datasource</td> <td>Array</td> <td>[]</td> <td>数据源</td></tr> <tr><td>border</td> <td>String</td> <td>'none'</td> <td>all:全边框，horizon:水平边框，vertical:垂直边框，box: 仅有外边框，group：针对多级表头分组边框</td></tr> <tr><td>height</td> <td>Number</td> <td>-</td> <td>设置为具体的值，tbody 出滚动条</td></tr> <tr><td>sortKey</td> <td>String</td> <td>-</td> <td>默认排序的 key</td></tr> <tr><td>sortOrder</td> <td>String</td> <td>-</td> <td>默认排序的升降顺序：asc 和 desc</td></tr> <tr><td>rowClassName</td> <td>Function</td> <td>function(rowItem: Object, rowIndex: Number)</td> <td>设置行的类名</td></tr> <tr><td>noresultMsg</td> <td>String</td> <td>暂无数据</td> <td>可以自定义无数据时显示文案</td></tr></tbody></table> <h3 id="fang-fa">方法</h3> <table><thead><tr><th>参数</th> <th>类型</th> <th>默认值</th> <th>说明</th></tr></thead> <tbody><tr><td>selectChange</td> <td>Function</td> <td>function(selection: Array)</td> <td>checkbox 勾选后触发，返回已勾选的数组</td></tr> <tr><td>sort</td> <td>Function</td> <td>function(sortObj: Object)</td> <td>排序按钮点击触发，返回{key, order}</td></tr> <tr><td>rowEnter</td> <td>Function</td> <td>function(index： Number)</td> <td>行进入事件</td></tr> <tr><td>rowLeave</td> <td>Function</td> <td>-</td> <td>行离开事件</td></tr></tbody></table></article><footer>Code licensed under MIT License.<a href="https://github.com/clair-design/clair">Github项目</a>/<a href="https://github.com/clair-design/clair/issues">问题反馈</a></footer></div></div><button type="button" title="回到顶部" class="c-button c-button--primary c-button--round c-button--outline" style="display:none;position:fixed;right:50px;bottom:100px;z-index:999;"><span class="c-icon">​<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation-2" style="vertical-align:middle;"><polygon points="12 2 19 21 12 17 5 21 12 2"></polygon></svg></span><!----></button></div></div></div>
   <script src="https://lib.baomitu.com/babel-polyfill/6.26.0/polyfill.min.js"></script><script src="https://lib.baomitu.com/fetch/2.0.3/fetch.min.js"></script>
   
-  <script src="/static/vendor.4c63d9dc.js"></script>
-  <script src="/static/framework.5d73b512.js"></script>
-  <script src="/static/manifest.39a376b4.js"></script>
+  <script src="/static/vendor.31308abe.js"></script>
+  <script src="/static/framework.52242e52.js"></script>
+  <script src="/static/manifest.9bfa618e.js"></script>
 </body>
 </html>
