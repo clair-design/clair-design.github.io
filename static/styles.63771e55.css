@@ -4170,37 +4170,41 @@ textarea {
 /**
  * sizing
  */
-.c-button--xs {
+.c-button.is-xs,
+.c-button-group.is-xs > .c-button{
   font-size: 12px;
   height: 22px;
   padding: 0 4px
 }
-.c-button--xs .c-icon:only-child {
+.c-button.is-xs .c-icon:only-child, .c-button-group.is-xs > .c-button .c-icon:only-child {
   margin-left: 0;
   margin-right: 0;
 }
-.c-button--sm {
+.c-button.is-sm,
+.c-button-group.is-sm > .c-button{
   font-size: 12px;
   height: 26px
 }
-.c-button--sm .c-icon:only-child {
+.c-button.is-sm .c-icon:only-child, .c-button-group.is-sm > .c-button .c-icon:only-child {
   margin-left: -5px;
   margin-right: -5px;
 }
-.c-button--lg {
+.c-button.is-lg,
+.c-button-group.is-lg > .c-button{
   font-size: 16px;
   height: 40px
 }
-.c-button--lg .c-icon:only-child {
+.c-button.is-lg .c-icon:only-child, .c-button-group.is-lg > .c-button .c-icon:only-child {
   margin-left: 0;
   margin-right: 0;
 }
-.c-button--xl {
+.c-button.is-xl,
+.c-button-group.is-xl > .c-button{
   font-size: 20px;
   height: 48px;
   padding: 0 16px
 }
-.c-button--xl .c-icon:only-child {
+.c-button.is-xl .c-icon:only-child, .c-button-group.is-xl > .c-button .c-icon:only-child {
   margin-left: -3px;
   margin-right: -3px;
 }
@@ -4858,30 +4862,30 @@ textarea {
 /**
  * chip size
  */
-.c-chip--xs {
+.c-chip__wrapper.is-xs {
   height: 20px;
   padding: 0 6px
 }
-.c-chip--xs .c-chip__label {
+.c-chip__wrapper.is-xs .c-chip__label {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
-.c-chip--sm {
+.c-chip__wrapper.is-sm {
   height: 24px;
   padding: 0 8px;
 }
-.c-chip--lg {
+.c-chip__wrapper.is-lg {
   height: 32px;
   padding: 0 12px
 }
-.c-chip--lg .c-chip__label {
+.c-chip__wrapper.is-lg .c-chip__label {
   font-size: 14px;
 }
-.c-chip--xl {
+.c-chip__wrapper.is-xl {
   height: 36px;
   padding: 0 14px
 }
-.c-chip--xl .c-chip__label {
+.c-chip__wrapper.is-xl .c-chip__label {
   font-size: 16px;
 }
 /**
@@ -6953,16 +6957,16 @@ textarea.c-input {
   opacity: 0.65;
   cursor: not-allowed;
 }
-.c-switch--small .c-switch__layoutbox {
+.c-switch.is-sm .c-switch__layoutbox {
   width: 30px;
   height: 14px;
   border-radius: 7px;
 }
-.c-switch--small .c-switch__layoutbox::after {
+.c-switch.is-sm .c-switch__layoutbox::after {
   width: 10px;
   height: 10px;
 }
-.c-switch--small .c-switch__checkbox:checked + .c-switch__layoutbox::after {
+.c-switch.is-sm .c-switch__checkbox:checked + .c-switch__layoutbox::after {
   margin-left: -10px;
 }
 /**
