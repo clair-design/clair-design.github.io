@@ -6082,6 +6082,19 @@ textarea.c-input {
   background: rgba(112, 171, 230, .1);
 }
 /**
+* c-pop-confirm
+*/
+.c-pop-confirm {
+  padding: 0;
+}
+.c-pop-confirm__body {
+  margin: 0;
+}
+.c-pop-confirm__footer {
+  text-align: right;
+  margin-top: 8px;
+}
+/**
 * c-radio
 */
 .c-radio {
