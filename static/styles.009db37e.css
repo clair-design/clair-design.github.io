@@ -5115,6 +5115,10 @@ textarea {
   margin: 0;
   width: 100%;
 }
+.c-datepicker .c-input[readonly] {
+  background: #fff;
+  color: #444;
+}
 .c-datepicker:hover .c-datepicker__hovericon + .c-datepicker__icon {
   z-index: -1;
   opacity: 0;
@@ -5129,7 +5133,10 @@ textarea {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: rgb(166, 166, 166);
+  color: rgb(166, 166, 166)
+}
+.c-datepicker__icon.disabled {
+  cursor: not-allowed;
 }
 .c-datepicker__hovericon {
   z-index: -1;
@@ -5152,7 +5159,11 @@ textarea {
 .c-datepicker__panel .c-datepicker__range {
   background: rgb(255, 255, 255);
   padding: 1em;
-  font-size: 14px
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 4em
 }
 .c-datepicker__panel .c-datepicker__range.is-sm {
   font-size: 12px;
@@ -5188,6 +5199,10 @@ textarea {
 .c-datepicker__text {
   text-align: center;
   margin: 0.5em 0;
+  position: absolute;
+  bottom: 1em;
+  padding-right: 2em;
+  width: 100%;
 }
 .c-datepicker__btns {
   position: absolute;
@@ -5202,6 +5217,7 @@ textarea {
   padding-top: 6px;
   background-color: #fff;
   overflow: auto;
+  width: 6em;
 }
 .c-datepicker__sidebar ul {
   padding: 0;
@@ -7247,6 +7263,170 @@ textarea.c-input {
 }
 .c-table__group.c-table table th.c-table__br, .c-table__group.c-table table td.c-table__br {
   border-right: 1px solid rgb(214, 217, 219);
+}
+/**
+* c-timepicker
+*/
+.c-timepicker {
+  display: inline-block;
+  position: relative;
+  border-radius: 0.2em
+}
+.c-timepicker .c-input-wrap {
+  width: 12em;
+}
+.c-timepicker input {
+  margin: 0;
+  width: 100%;
+}
+.c-timepicker .c-timepicker__icon {
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: rgb(166, 166, 166);
+}
+.c-timepicker .c-timepicker__icon.disabled {
+  cursor: not-allowed;
+}
+.c-timepicker .c-timepicker__hovericon {
+  z-index: -1;
+  opacity: 0;
+}
+.c-timepicker:hover .c-timepicker__hovericon + .c-timepicker__icon {
+  z-index: -1;
+  opacity: 0;
+}
+.c-timepicker:hover .c-timepicker__hovericon {
+  z-index: 2;
+  opacity: 1;
+}
+.c-timepicker__panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 12em
+}
+.c-timepicker__panel li {
+  list-style: none;
+  color: rgb(68, 68, 68);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0 0 0 12px;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  text-align: left;
+  cursor: pointer;
+}
+.c-timepicker__panel li.disabled {
+  color: rgb(241, 242, 243);
+}
+.c-timepicker__panel li.active {
+  font-weight: bold;
+  color: rgb(68, 68, 68);
+  background: rgb(241, 242, 243);
+}
+.c-timerange__panel,
+.c-timepicker__wrap {
+  display: none;
+  background: #fff;
+  border: 1px solid #d4d9db;
+  overflow: hidden
+}
+.c-timerange__panel ul, .c-timepicker__wrap ul {
+  list-style: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0 12em;
+  text-align: center;
+  margin: 0;
+}
+.c-timerange__panel .c-timepicker__item, .c-timepicker__wrap .c-timepicker__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  max-height: 14em;
+}
+.c-timerange__panel .c-timepicker__item:hover, .c-timepicker__wrap .c-timepicker__item:hover {
+  overflow-y: auto;
+}
+.c-timerange__panel .c-timepicker__item + .c-timepicker__item, .c-timepicker__wrap .c-timepicker__item + .c-timepicker__item {
+  border-left: 1px solid rgb(214, 217, 219);
+}
+.show {
+  display: block;
+}
+.c-timepicker__timerange {
+  width: 15em;
+  border: 1px solid rgb(214, 217, 219);
+  border-radius: 3px
+}
+.c-timepicker__timerange .c-timerange__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.c-timepicker__timerange .c-timerange__wrapper.readonly {
+  background-color: rgb(247, 247, 248);
+  color: rgb(160, 166, 171);
+  cursor: default;
+}
+.c-timepicker__timerange .c-timerange__wrapper.disabled {
+  background-color: rgb(228, 230, 231);
+  color: rgb(187, 192, 195);
+  cursor: not-allowed;
+}
+.c-timepicker__timerange .c-timerange__wrapper input {
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.c-timepicker__timerange .c-timerange__wrapper span {
+  line-height: 32px;
+}
+.c-timepicker__timerange .c-timerange__wrapper.is-size__lg span {
+  line-height: 40px;
+  font-size: 16px;
+}
+.c-timepicker__timerange .c-timerange__wrapper.is-size__sm span {
+  line-height: 26px;
+  font-size: 12px;
+}
+.c-timerange__panel {
+  display: none;
+  border-left: 1px solid rgb(214, 217, 219)
+}
+.c-timerange__panel.show {
+  display: block;
+}
+.c-timerange__panel .c-timerange__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.c-timerange__panel .c-timepicker__wrap {
+  display: block;
+  border: 0;
+}
+.c-timerange__panel .c-timepicker__wrap p {
+  width: 100%;
+  text-align: center;
+}
+.c-timerange__panel .c-timepicker__panel {
+  border: 1px solid rgb(214, 217, 219);
+  margin: 0.5em;
+}
+.c-timerange__panel .c-timerange__btns {
+  text-align: right;
+  margin: 0.5em;
 }
 /**
 * c-tip
