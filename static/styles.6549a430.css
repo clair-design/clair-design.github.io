@@ -7265,6 +7265,156 @@ textarea.c-input {
   border-right: 1px solid rgb(214, 217, 219);
 }
 /**
+* c-tabs
+*/
+.c-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tabs-nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-transition: color cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: transparent
+}
+.tabs-nav .tabs-nav__item {
+  cursor: pointer;
+  padding: 0 0.6em;
+  line-height: 2.8em;
+  color: #000;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.tabs-nav .tabs-nav__item:hover,
+    .tabs-nav .tabs-nav__item.is-active {
+  color: hsl(210, 70%, 67%);
+}
+.tabs-nav .tabs-nav__item.disabled {
+  color: rgb(201, 204, 207);
+  cursor: not-allowed;
+}
+.tabs-nav .tabs-nav--item:last-child {
+  margin-right: 0;
+}
+.c-tabs--card {
+  display: block;
+  border: 1px solid rgb(228, 230, 231)
+}
+.c-tabs--card .tabs-nav {
+  background: rgba(38, 127, 217, .1);
+}
+.c-tabs--card .tabs-nav .tabs-nav__item {
+  padding: 0 1em;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item.is-active {
+  background-color: #fff;
+  position: relative;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item.is-active::after {
+  position: absolute;
+  z-index: 1;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  left: 0;
+  bottom: -1px;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item:first-child.is-active {
+  border-right: 1px solid rgb(228, 230, 231);
+}
+.c-tabs--card .tabs-nav .tabs-nav__item:not(:first-child).is-active {
+  border-left-color: rgb(228, 230, 231);
+  border-right-color: rgb(228, 230, 231);
+}
+.nav-bar__active {
+  z-index: 1;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: hsl(210, 70%, 67%);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.c-tabs--top {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.c-tabs--bottom {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.c-tabs--top .tabs-nav,
+.c-tabs--bottom .tabs-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-bottom: 1px solid rgb(228, 230, 231)
+}
+.c-tabs--top .tabs-nav .tabs-nav__item, .c-tabs--bottom .tabs-nav .tabs-nav__item {
+  margin-right: 1.5em;
+}
+.c-tabs--top .tabs-nav .nav-bar__active, .c-tabs--bottom .tabs-nav .nav-bar__active {
+  height: 2px;
+  bottom: -1px;
+}
+.c-tabs--left {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row
+}
+.c-tabs--left .tabs-nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: 1px solid rgb(228, 230, 231);
+}
+.c-tabs--left .tabs-nav .nav-bar__active {
+  width: 2px;
+  right: -1px;
+}
+.c-tabs--right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse
+}
+.c-tabs--right .tabs-nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid rgb(228, 230, 231);
+}
+.c-tabs--right .tabs-nav .nav-bar__active {
+  width: 2px;
+  left: -1px;
+}
+.c-tabs--left > .tabs-nav__item:not(:nth-last-child(2)),
+.c-tabs--right > .tabs-nav__item:not(:nth-last-child(2)) {
+  margin-bottom: 0.6em;
+}
+.tab-pane__content {
+  padding: 0.6em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/**
 * c-timepicker
 */
 .c-timepicker {
