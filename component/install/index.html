@@ -46,11 +46,14 @@
 <span class="hljs-keyword">import</span> <span class="hljs-string">'clair/dist/clair.css'</span>
 
 Vue.use(Clair)
+</code></pre> <h2 id="guan-yu-polyfill-jian-tan-zai-vue-cli-3-xiang-mu-zhong-de-shi-yong">关于 polyfill，兼谈在 vue-cli 3 项目中的使用</h2> <p>因为 Clair 项目中使用到了一些新的 ES201x 特性（主要是 Array 和 Object 的一些拓展），在构建时我们并未对这些特性（如<code>Array#findIndex</code> <code>Object.assign</code>等）进行 polyfill。我们认为，对这些特性的 polyfill 工作应该交给开发者/使用者。</p> <p>下面以 <code>vue-cli@3</code> 生成的项目，说明如何解决 polyfill 问题。在 vue-cli 3 的默认配置中，babel 并不会对 node_modules 中的模块进行处理（transpile），关于这一点，可参阅<a href="https://cli.vuejs.org/zh/guide/browser-compatibility.html#polyfill" target="_blank" rel="nofollow noopener noreferrer">vue-cli 官方文档</a>。</p> <p>你需要在 <code>vue.config.js</code> 文件中，添加如下配置：</p> <pre><code class="hljs language-js">  <span class="hljs-comment">// .... other configurations</span>
+  transpileDependencies: [<span class="hljs-string">'clair'</span>]
+  <span class="hljs-comment">// ...</span>
 </code></pre></article><footer>Code licensed under MIT License.<a href="https://github.com/clair-design/clair">Github项目</a>/<a href="https://github.com/clair-design/clair/issues">问题反馈</a></footer></div></div><button type="button" title="回到顶部" class="c-button c-button--primary c-button--round c-button--outline" style="display:none;position:fixed;right:50px;bottom:100px;z-index:999;"><span class="c-icon">​<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation-2" style="vertical-align:middle;"><polygon points="12 2 19 21 12 17 5 21 12 2"></polygon></svg></span><!----></button></div></div></div>
   <script src="https://lib.baomitu.com/babel-polyfill/6.26.0/polyfill.min.js"></script><script src="https://lib.baomitu.com/fetch/2.0.3/fetch.min.js"></script>
   
   <script src="/static/vendor.66bfa9de.js"></script>
-  <script src="/static/framework.106baad6.js"></script>
-  <script src="/static/manifest.74086ef6.js"></script>
+  <script src="/static/framework.402d9bac.js"></script>
+  <script src="/static/manifest.52dbcf92.js"></script>
 </body>
 </html>
