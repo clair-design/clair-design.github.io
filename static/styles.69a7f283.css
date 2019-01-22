@@ -7270,13 +7270,22 @@ textarea.c-input {
 .c-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: flex
+}
+.c-tabs div[role="tab"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+.c-tabs .is-active.is-focused {
+  border: 2px solid hsl(210, 70%, 67%);
+  -webkit-box-shadow: inset 0 0 2px rgb(31, 102, 173);
+          box-shadow: inset 0 0 2px rgb(31, 102, 173);
 }
 .tabs-nav {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   list-style: none;
   -webkit-transition: color cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -7301,38 +7310,10 @@ textarea.c-input {
 .tabs-nav .tabs-nav--item:last-child {
   margin-right: 0;
 }
-.c-tabs--card {
-  display: block;
-  border: 1px solid rgb(228, 230, 231)
-}
-.c-tabs--card .tabs-nav {
-  background: rgba(38, 127, 217, .1);
-}
-.c-tabs--card .tabs-nav .tabs-nav__item {
-  padding: 0 1em;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-}
-.c-tabs--card .tabs-nav .tabs-nav__item.is-active {
-  background-color: #fff;
-  position: relative;
-}
-.c-tabs--card .tabs-nav .tabs-nav__item.is-active::after {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-  left: 0;
-  bottom: -1px;
-}
-.c-tabs--card .tabs-nav .tabs-nav__item:first-child.is-active {
-  border-right: 1px solid rgb(228, 230, 231);
-}
-.c-tabs--card .tabs-nav .tabs-nav__item:not(:first-child).is-active {
-  border-left-color: rgb(228, 230, 231);
-  border-right-color: rgb(228, 230, 231);
+.nav-outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .nav-bar__active {
   z-index: 1;
@@ -7357,10 +7338,6 @@ textarea.c-input {
 }
 .c-tabs--top .tabs-nav,
 .c-tabs--bottom .tabs-nav {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   border-bottom: 1px solid rgb(228, 230, 231)
 }
 .c-tabs--top .tabs-nav .tabs-nav__item, .c-tabs--bottom .tabs-nav .tabs-nav__item {
@@ -7376,11 +7353,13 @@ textarea.c-input {
       -ms-flex-direction: row;
           flex-direction: row
 }
-.c-tabs--left .tabs-nav {
+.c-tabs--left .nav-outer {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.c-tabs--left .tabs-nav {
   border-right: 1px solid rgb(228, 230, 231);
 }
 .c-tabs--left .tabs-nav .nav-bar__active {
@@ -7393,11 +7372,13 @@ textarea.c-input {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse
 }
-.c-tabs--right .tabs-nav {
+.c-tabs--right .nav-outer {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.c-tabs--right .tabs-nav {
   border-left: 1px solid rgb(228, 230, 231);
 }
 .c-tabs--right .tabs-nav .nav-bar__active {
@@ -7411,8 +7392,45 @@ textarea.c-input {
 .tab-pane__content {
   padding: 0.6em;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.c-tabs--card {
+  display: block;
+  border: 1px solid rgb(228, 230, 231)
+}
+.c-tabs--card .tabs-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(38, 127, 217, .1);
+}
+.c-tabs--card .tabs-nav .tabs-nav__item {
+  padding: 0 1.5em;
+  margin-right: 0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item.is-active {
+  background-color: #fff;
+  position: relative;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item.is-active::after {
+  position: absolute;
+  z-index: 1;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  left: 0;
+  bottom: -1px;
+}
+.c-tabs--card .tabs-nav .tabs-nav__item:first-child.is-active {
+  border-right: 1px solid rgb(228, 230, 231);
+}
+.c-tabs--card .tabs-nav .tabs-nav__item:not(:first-child).is-active {
+  border-left-color: rgb(228, 230, 231);
+  border-right-color: rgb(228, 230, 231);
 }
 /**
 * c-timepicker
