@@ -183,7 +183,7 @@
   &gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;opt-td&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;props&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;c-table__opt&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;showIp(props.item.ip)&quot;</span>&gt;</span>  查看ip
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;showIp(props)&quot;</span>&gt;</span>  查看ip
         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -236,8 +236,9 @@
     }
   },
   <span class="hljs-attr">methods</span>: {
-    showIp (ip) {
-      alert(<span class="hljs-string">'ip 为 '</span> + ip)
+    showIp (props) {
+      <span class="hljs-built_in">console</span>.log(props)
+      alert(<span class="hljs-string">'ip 为 '</span> + props.item.ip + <span class="hljs-string">'行号：'</span> + props.rowIndex)
     },
     sorter (sortObj) {
       <span class="hljs-keyword">this</span>.sortKey = sortObj.key
@@ -770,7 +771,7 @@
   <script src="https://lib.baomitu.com/babel-polyfill/6.26.0/polyfill.min.js"></script><script src="https://lib.baomitu.com/fetch/2.0.3/fetch.min.js"></script><script src="https://lib.baomitu.com/clipboard.js/1.7.1/clipboard.min.js"></script><script src="https://lib.baomitu.com/yamljs/0.3.0/yaml.min.js"></script>
   
   <script src="/static/vendor.22611de3.js"></script>
-  <script src="/static/framework.2dbada7b.js"></script>
-  <script src="/static/manifest.63393291.js"></script>
+  <script src="/static/framework.ade10f3a.js"></script>
+  <script src="/static/manifest.1275948b.js"></script>
 </body>
 </html>
