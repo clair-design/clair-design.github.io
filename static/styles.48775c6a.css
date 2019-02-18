@@ -7082,9 +7082,7 @@ textarea.c-input {
 .c-scroll__tbody,
 .c-scrolltable {
   overflow-x: auto;
-  position: relative;
-  -ms-scroll-chaining: none;
-  overscroll-behavior: none
+  position: relative
 }
 .c-scroll__table table, .c-scroll__tbody table, .c-scrolltable table {
   table-layout: fixed;
