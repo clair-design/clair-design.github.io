@@ -26,8 +26,8 @@ self.addEventListener('message', (event) => {
  */
 self.__precacheManifest = [
   {
-    "url": "static/framework.ee3a75b6.js",
-    "revision": "42d2e2b6d33f79650215d2e871755bd8"
+    "url": "static/framework.61385ede.js",
+    "revision": "cb108f6427b17b62c2d851ed58a8e830"
   },
   {
     "url": "static/manifest.48586692.js",
